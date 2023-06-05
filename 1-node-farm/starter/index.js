@@ -1,7 +1,17 @@
 const fs = require("fs");
 
-const textIn = fs.readFileSync("./txt/input.txt", "utf8");
+fs.readFile("./txt/start.txt", "utf-8", (err, data1) => {
+  fs.readFile(`./txt/${data1}.txt`, "utf8", (err, data2) => {
+    console.log(data2);
 
-const textOut = `This is not a great way to understand this is a great way to learn ${Date.now()}`;
+    fs.readFile(`./txt/append.txt`, "utf8", (err, data3) => {
+      console.log(data3);
 
-fs.writeFileSync("./txt/output.txt", textOut);
+      fs.writeFile("./txt/final.txt", `${data2}\n${data3}`, "utf-8", (err) => {
+        console.log(err);
+      });
+    });
+  });
+});
+
+console.log("reading file");
