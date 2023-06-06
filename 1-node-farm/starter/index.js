@@ -1,6 +1,24 @@
 const fs = require("fs");
 const http = require("http");
+const url = require("url");
 
-http.createServer((req, res) => {
-  res.end("Hello from server");
+const server = http.createServer((req, res) => {
+  const pathName = req.url;
+
+  if (pathName === "/" || pathName === "/overview") {
+    res.end("This is the overview");
+  } else if (pathName === "/product") {
+    res.end("this is the Product");
+  } else if (pathName === "/api") {
+    res.end("Api");
+  } else {
+    res.writeHead(404, {
+      "Content-type": "text/html",
+    });
+    res.end("<h1>Page NOt found</h1>");
+  }
+});
+
+server.listen(8000, "127.0.0.1", () => {
+  console.log("Listen to req on port 8000");
 });
