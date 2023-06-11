@@ -3,7 +3,7 @@ const http = require("http");
 const url = require("url");
 
 const replaceTemplate = (temp, product) => {
-  let output = temp.replace(/{%PRODUCT_NAME%}/g, product.productName);
+  let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
 
   output = output.replace(/{%IMAGE%}/g, product.image);
   output = output.replace(/{%PRICE%}/g, product.price);
