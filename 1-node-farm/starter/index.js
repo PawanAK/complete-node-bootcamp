@@ -54,6 +54,7 @@ const server = http.createServer((req, res) => {
   }
   //Product page
   else if (pathname === "/product") {
+    const product = dataObj[query.id];
     res.end("this is the Product");
   }
   //API
