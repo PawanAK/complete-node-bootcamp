@@ -30,5 +30,18 @@ const server = http.createServer();
 
 server.on("request", (req, res) => {
   console.log("Request Received");
+  console.log(req.url);
   res.end("request received");
+});
+
+server.on("request", (req, res) => {
+  console.log("Another request ❤️");
+});
+
+server.on("close", () => {
+  console.log("server Closed");
+});
+
+server.listen(8000, "127.0.0.1", () => {
+  console.log("Waiting for request");
 });
