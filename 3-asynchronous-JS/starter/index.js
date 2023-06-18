@@ -35,5 +35,6 @@ const getDogPic = async () => {
     console.log(error);
   }
 };
-
+console.log('1111');
 getDogPic();
+console.log('22222');
