@@ -64,7 +64,6 @@ app.post('/api/v1/tours', (req, res) => {
       console.log(err);
     }
   );
-  res.send("Done")
 });
 
 app.patch('/api/v1/tours/:id', (req, res) => {
