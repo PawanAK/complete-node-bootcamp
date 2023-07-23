@@ -1,8 +1,9 @@
 const express = require("express");
 
 const router = express.Router()
-
 app.use('/api/v1/tours', router)
+
+
 
 router.route('/').get(getAllTours).post(createTour);
 
